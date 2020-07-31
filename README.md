@@ -65,9 +65,11 @@ I'll be developing these with pygame
 
 ### Tug O War
 
+*not started*
+
 ### Maze Game
 
-I'll be using Wilson's Algorithm to generate mazes, code modified so that the maze will be generated on a binary grid. The example I used was found on this [stackexchange post](https://codereview.stackexchange.com/questions/227660/maze-generator-animator-in-python)
+I'll be using [Wilson's Algorithm](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Wilson's_algorithm) to generate mazes, code modified so that the maze will be generated on a binary grid. The example I used was found on this [stackexchange post](https://codereview.stackexchange.com/questions/227660/maze-generator-animator-in-python)
 
 The code itself was mostly copied from another [pygame maze tutorial](https://pythonspot.com/maze-in-pygame/)
 The game is endless. You start on the yellow square and try to get to the blue one. 
@@ -85,11 +87,18 @@ The game is endless. You start on the yellow square and try to get to the blue o
 - [API LiveChatMessages](https://developers.google.com/youtube/v3/live/docs/liveChatMessages#resource)
 - [YouTube Python API Samples on Github](https://github.com/youtube/api-samples/tree/master/python)
 
+*Google's Oauth 2 Stuff*
+- [Oauth2.0 for Installed Apps](https://developers.google.com/youtube/v3/guides/auth/installed-apps#custom-uri-scheme)
+- [google-auth-oauthlib](https://google-auth-oauthlib.readthedocs.io/en/latest/)
+- [google-auth-oauthlib.flow](https://google-auth-oauthlib.readthedocs.io/en/latest/reference/google_auth_oauthlib.flow.html)
+- [google-auth-oauthlib.credentials](https://google-auth.readthedocs.io/en/stable/reference/google.oauth2.credentials.html#google.oauth2.credentials.Credentials)
+
 **For Game Interface**
 
 *Pygame*
 - [pygame: getting started](https://www.pygame.org/wiki/GettingStarted)
 - [pygame intro](https://www.pygame.org/docs/tut/PygameIntro.html)
+- [pygame docs](https://www.pygame.org/docs/)
 - [pygame tutorials](https://www.pygame.org/wiki/tutorials)
 
 *Generating Key Events*
