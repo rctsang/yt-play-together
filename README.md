@@ -4,6 +4,15 @@ This is a continuation of what I began in [zoom-plays](https://github.com/tsangr
 
 At some point I'll give this a better UI, but for now it's real ugly and barely works.
 
+## Running the "App"
+In the main folder of the repo, first make sure you have all the necessary dependencies in your environment (see below)
+Currently only `playgba.py` is working with YouTube Live. 
+
+```
+python3 playgba.py 	# starts the script
+```
+Notes: You will need to have a valid `client_secrets.json` file saved in a folder named `private/` for this script to work. `playgba.py` simply gets gba commands from the YouTube LiveChat and simulates a corrosponding keystroke.
+
 ## Dependencies
 
 - `pyobjc-framework-quartz`
@@ -41,7 +50,7 @@ I'll be attempting to use the python wrapper for the YouTube livestream API to a
 
 A ton of stuff is going on here so I'll try to explain what's happening in comments rather than here. But here's a basic overview of what's happening:
 
-First, I created a project on [Google Developer Console](https://console.developers.google.com/). Since I want to access live broadcasts with my app, I need to use Oauth 2.0 for API access. I created an Oauth2 constent form in the tab on the console, then in the Credentials tab of the console, I creaded and Oauth2 user and downloaded the corrosponding `client_secrets.json` file, so that my app knows where to go to get authorization.
+First, I created a project on [Google Developer Console](https://console.developers.google.com/). Since I want to access live broadcasts with my app, I need to use Oauth 2.0 for API access. I created an Oauth2 consent form in the tab on the console, then in the Credentials tab of the console, I created an Oauth2 user and downloaded the corrosponding `client_secrets.json` file, so that my app knows where to go to get authorization.
 
 Using the YouTube Live Streaming API, which is partially included in the YouTube Data API, I can access the liveBroadcast API to search my accout's channel (choose your account during runtime on the Oauth2 consent screen) for any ready or active live broadcasts. I can select the one I want by title, then access the associated liveChatId.
 
@@ -53,7 +62,7 @@ In other news, this more or less works, though the latency leads to about a 10s 
 
 ## GBA Game Interface
 
-It's dumb, since most emulators for mac lack lua scripting capacity (waiting on mGBA release), this interface is literally just generated keyboard events while the emulator is in the foreground. Too lazy to compile the emulator's source files on my own so this is what it is for now.
+It's a dumbinterface. since most emulators for mac lack lua scripting capacity (waiting on mGBA release), this interface is literally just generated keyboard events while the emulator is in the foreground. Too lazy to compile the emulator's source files on my own so this is what it is for now.
 
 For now I'm using [mGBA](https://github.com/mgba-emu/mgba) which says it'll support lua scripting eventually
 
@@ -72,7 +81,7 @@ I'll be developing these with pygame
 I'll be using [Wilson's Algorithm](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Wilson's_algorithm) to generate mazes, code modified so that the maze will be generated on a binary grid. The example I used was found on this [stackexchange post](https://codereview.stackexchange.com/questions/227660/maze-generator-animator-in-python)
 
 The code itself was mostly copied from another [pygame maze tutorial](https://pythonspot.com/maze-in-pygame/)
-The game is endless. You start on the yellow square and try to get to the blue one. 
+The game is endless. You start on the yellow square and try to get to the green one. 
 
 ## Useful Links
 
@@ -86,6 +95,7 @@ The game is endless. You start on the yellow square and try to get to the blue o
 - [API LiveBroadcasts](https://developers.google.com/youtube/v3/live/docs/liveBroadcasts#status.lifeCycleStatus)
 - [API LiveChatMessages](https://developers.google.com/youtube/v3/live/docs/liveChatMessages#resource)
 - [YouTube Python API Samples on Github](https://github.com/youtube/api-samples/tree/master/python)
+- [YouTube Data API Quota Calculator](https://developers.google.com/youtube/v3/determine_quota_cost)
 
 *Google's Oauth 2 Stuff*
 - [Oauth2.0 for Installed Apps](https://developers.google.com/youtube/v3/guides/auth/installed-apps#custom-uri-scheme)
